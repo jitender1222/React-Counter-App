@@ -1,25 +1,18 @@
-import logo from './logo.svg';
 import './App.css';
+import {useState} from 'react';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const [value,setValue]=useState(0);
+ return (
+  <>
+  <h1 style={{textAlign:"center"}}>Counter Appp</h1>
+  <div className="app">Counter value is: {value}
+  <button className="btn" onClick={()=> value > 10 ? " " : setValue(value+1)} >Increase Counter</button>
+  <button className="btn" onClick={()=> value>0 ? setValue(value-1): value}>Decrease Counter</button>
+  <button className="btn" onClick={()=>{setValue(0)}}>Reset Counter</button>
+  </div>
+  </>
+ )
 }
 
 export default App;
